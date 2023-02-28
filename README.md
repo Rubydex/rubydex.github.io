@@ -1,1 +1,1 @@
-# rubydex-docs.github.io
+# rubydex.github.io
