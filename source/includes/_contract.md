@@ -134,63 +134,89 @@ POST /api
 
 ```json
 {
-    "data": {
-        "symbols": [
-            {
-                "adl_enable": "1",
-                "close_by": "test-1",
-                "contract_size": "3",
-                "create_time": "2022-09-20 11:31:00",
-                "expiry_date": "20230920",
-                "funding_interval": "30",
-                "funding_rate": "0.01",
-                "id": 1,
-                "initial_margin": "10000",
-                "maint_margin": "10000",
-                "maker_commission": "100",
-                "max_order_qty": "10000",
-                "max_price": "500",
-                "mini_price_increment": "4",
-                "predicted_rate": "0.03",
-                "risk_limit": "10000",
-                "risk_step": "5",
-                "symbol": 180210,
-                "symbol_cn_name": "180210",
-                "symbol_en_name": "180210",
-                "taker_commission": "100",
-                "ticker_root": "USDT",
-                "update_time": "2022-09-20 11:31:00"
-            }
-        ]
-    },
-    "ret_msg": "NO_ERROR",
-    "ret_code": 0,
-    "cid": ""
+	"msg": "NO_ERROR",
+	"code": 0,
+	"data": {
+		"symbols": [
+			{
+				"activity": "1",
+				"adl_enable": "1",
+				"base_currency": "BTC",
+				"close_by": "500012",
+				"contract_size": "1",
+				"create_time": "2023-01-03 14:31:00",
+				"expiried": "0",
+				"funding_interval": 28800,
+				"funding_symbol": ".BTCUSDTFR",
+				"id": 1,
+				"index_symbol": ".BTCUSDT",
+				"initial_margin": "0.01000000",
+				"maint_margin": "0.00500000",
+				"maker_commission": "0.00020000",
+				"mark_symbol": ".BTCUSDTMP",
+				"max_order_qty": "10.00000000",
+				"max_price": " ",
+				"predicate_funding_symbol": ".BTCUSDTPREDFR",
+				"predicted_rate": "",
+				"price_precision": 1,
+				"qty_precision": 4,
+				"qty_tick_size": "0.00010000",
+				"quote_currency": "USDT",
+				"risk_limit": "",
+				"risk_step": "9",
+				"symbol": "BTCUSDT",
+				"symbol_cn_name": "BTC/USDT",
+				"symbol_en_name": "BTCUSDT",
+				"taker_commission": "0.00060000",
+				"tick_size": "0.10000000",
+				"ticker_root": "USDT",
+				"tip_order_qty": "2.00000000",
+				"update_time": "2023-01-03 14:31:00",
+				"value_precision": 4,
+				"volume_precision": 4
+			}
+		]
+	},
+	"cid": ""
 }
 ```
 | Field                    | Description                          |
 |--------------------------|--------------------------------------|
-| symbol                   | Product symbol                       |
-| symebol_en_name          | Product symbol English name          |
-| index_symbol             | Index price symbol                   |
-| mark_symbol              | Mark price symbol                    |
-| predicate_funding_symbol | Predicate funding symbol             |
-| funding_symbol           | Funding symbol                       |
-| tick_size                | price tick size                      |
-| qty_tick_size            | Quantity tick size                   |
-| price_precision          | price precision                      |
-| max_order_qty            | Maximum order quantity               |
-| tip_order_qty            | Remind when touch tip order quantity |
 | activity                 | Trade active level                   |
+| adl_enable               | Automatic position is enabled        |
+| base_currency            | Base currency                        |
+| close_by                 | Operator                             |
+| contract_size            | Contract size                        |
+| create_time              | Create time                          |
 | expiried                 | go off the market                    |
-| contract_size            | contract size                        |
+| funding_interval         | funding interval                     |
+| funding_symbol           | Funding symbol                       |
+| id                       | id                                   |
+| index_symbol             | Index price symbol                   |
 | initial_margin           | Initial Margin rate                  |
 | maint_margin             | Maintenance Margin rate              |
-| funding_interval         | Funding interval                     |
-| base_currency            | Base currency                        |
-| quote_currency           | Quote currency                       |
-| value_precision          | Value precision                      |
+| maker_commission         | Maker commission                     |
+| mark_symbol              | Mark price symbol                    |
+| max_order_qty            | Maximum order quantity               |
+| max_price                | Max price                            |
+| predicate_funding_symbol | Predicate funding symbol             |
+| predicted_rate           | Predicted rate                       |
+| price_precision          | price precision                      |
 | qty_presicion            | Quantity precision                   |
+| qty_tick_size            | Quantity tick size                   |
+| quote_currency           | Quote currency                       |
+| risk_limit               | Rsik limit                           |
+| risk_step                | Rsik step                            |
+| symbol                   | Product symbol                       |
+| symbol_cn_name           | Product symbol chinese name          |
+| symebol_en_name          | Product symbol english name          |
+| taker_commission         | Taker commission                     |
+| tick_size                | Price tick size                      |
+| ticker_root              | Ticker root                          |
+| tip_order_qty            | Remind when touch tip order quantity |
+| update_time              | Update time                          |
+| value_precision          | Value precision                      |
+| volume_precision         | Chain precision                      |
 
 ## Common order fields
 
