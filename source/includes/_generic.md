@@ -4,10 +4,8 @@ Welcome to the [RubyDex](https://rubydex.com) API documentation. We offer REST a
 ## General API information
 * Rest API base endpoints:
   * Default endpoint: **https://api200.rubydex.com**
-  * TestNet endpoint: **https://testnet-api.rubydex.com**
 * WebSocket API base endpoints:
   * Default endpoint: **wss://rubydex.com/ws**
-  * TestNet endpoint: **wss://testnet.rubydex.com/ws**
 * RubyDex provides HTTP Rest API for client to operate Orders, all endpoints return a JSON object.
 
 ## REST API Standards
