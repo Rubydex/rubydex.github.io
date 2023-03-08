@@ -776,6 +776,9 @@
                     <a href="#query-orders-by-order-staus" class="toc-h2 toc-link" data-title="Query  orders by order staus">Query  orders by order staus</a>
                   </li>
                   <li>
+                    <a href="#query-user-trade-by-symbol" class="toc-h2 toc-link" data-title="Query user trade by symbol">Query user trade by symbol</a>
+                  </li>
+                  <li>
                     <a href="#query-kline" class="toc-h2 toc-link" data-title="Query kline">Query kline</a>
                   </li>
               </ul>
@@ -3746,15 +3749,12 @@ HMacSha256({
 <td></td>
 </tr>
 </tbody></table>
-<div class="highlight"><pre class="highlight plaintext"><code>
-## Query user trade by symbol
-
-&gt; Request format
-
+<h2 id='query-user-trade-by-symbol'>Query user trade by symbol</h2>
+<blockquote>
+<p>Request format</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>POST /api
 </code></pre></div>
-<p>POST /api
-```</p>
-
 <blockquote>
 <p>Request sample</p>
 </blockquote>
@@ -3861,67 +3861,179 @@ HMacSha256({
 <td></td>
 </tr>
 </tbody></table>
+<div class="highlight"><pre class="highlight plaintext"><code>
+&gt; Response sample
 
-<blockquote>
-<p>Response sample</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_ERROR"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1119</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">705232705</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"close_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500020"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"closed_pnl"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"closed_size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-16 01:24:17"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"exec_fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.24</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"exec_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9c1626ff-5b18-3a39-b23d-25d7cdc0bb64"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"exec_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1200.0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"exec_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"exec_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"exec_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">1200.0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"fee_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0002</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9b0aff86-06c0-370b-9ea8-e44058a2edc9"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETHUSDT"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"symbol_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"update_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-16 01:24:17"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">500020</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>| Field                    | Type    | Description                                                         | Possible values                      |
-|--------------------      |---------|---------------------------------------------------------------------|--------------------------------------|
-| orders                   | List    | Orders information                                                  |                                      |
-| account_id               | Integer | Account id                                                          |                                      |
-| close_by                 | String  | Last operator                                                       |                                      |
-| closed_pnl               | decimal | Closing profit and loss                                             |                                      |
-| closed_size              | decimal | Closing size                                                        |                                      |
-| create_time              | String  | Create time                                                         |                                      |
-| currency                 | String  | trading account's settle currency. Use to identify trading account. | 1:USDT                               |
-| currency_id              | Integer | Current id                                                          |                                      |
-| exec_fee                 | decimal | Settlement expenses                                                 |                                      |
-| exec_id                  | String  | Exec id                                                             |                                      |
-| exec_price               | decimal | Transaction price                                                   |                                      |
-| exec_qty                 | decimal | Number of transactions                                              |                                      |
-| exec_type                | String  | Exec type                                                           |                                      |
-| exec_value               | decimal | Exec value                                                          |                                      |
-| fee_rate                 | decimal | Settle fee                                                          |                                      |
-| orderid                  | String  | Order id                                                            |                                      |
-| side                     | Integer | Side                                                                |                                      |
-| symbol                   | String  | Symbol                                                              |                                      |
-| symbol_id                | Integer | Symbol id                                                           |                                      |
-| update_time              | String  | Update time                                                         |                                      |
-| user_id                  | Integer | User id                                                             |                                      |
-
-</code></pre></div><h2 id='query-kline'>Query kline</h2>
+```json
+{
+    "msg": "NO_ERROR",
+    "code": 0,
+    "data": {
+        "total": 1119,
+        "orders": [
+            {
+                "account_id": 705232705,
+                "close_by": "500020",
+                "closed_pnl": 0.0,
+                "closed_size": 0.0,
+                "create_time": "2023-01-16 01:24:17",
+                "currency": "USDT",
+                "currency_id": 1,
+                "exec_fee": 0.24,
+                "exec_id": "9c1626ff-5b18-3a39-b23d-25d7cdc0bb64",
+                "exec_price": 1200.0,
+                "exec_qty": 1.0,
+                "exec_type": "6",
+                "exec_value": 1200.0,
+                "fee_rate": 0.0002,
+                "order_id": "9b0aff86-06c0-370b-9ea8-e44058a2edc9",
+                "side": "1",
+                "symbol": "ETHUSDT",
+                "symbol_id": 11,
+                "update_time": "2023-01-16 01:24:17",
+                "user_id": 500020
+            }
+        ]
+    },
+    "cid": "test-123"
+}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Possible values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orders</td>
+<td>List</td>
+<td>Orders information</td>
+<td></td>
+</tr>
+<tr>
+<td>account_id</td>
+<td>Integer</td>
+<td>Account id</td>
+<td></td>
+</tr>
+<tr>
+<td>close_by</td>
+<td>String</td>
+<td>Last operator</td>
+<td></td>
+</tr>
+<tr>
+<td>closed_pnl</td>
+<td>decimal</td>
+<td>Closing profit and loss</td>
+<td></td>
+</tr>
+<tr>
+<td>closed_size</td>
+<td>decimal</td>
+<td>Closing size</td>
+<td></td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>String</td>
+<td>Create time</td>
+<td></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>trading account&#39;s settle currency. Use to identify trading account.</td>
+<td>1:USDT</td>
+</tr>
+<tr>
+<td>currency_id</td>
+<td>Integer</td>
+<td>Current id</td>
+<td></td>
+</tr>
+<tr>
+<td>exec_fee</td>
+<td>decimal</td>
+<td>Settlement expenses</td>
+<td></td>
+</tr>
+<tr>
+<td>exec_id</td>
+<td>String</td>
+<td>Exec id</td>
+<td></td>
+</tr>
+<tr>
+<td>exec_price</td>
+<td>decimal</td>
+<td>Transaction price</td>
+<td></td>
+</tr>
+<tr>
+<td>exec_qty</td>
+<td>decimal</td>
+<td>Number of transactions</td>
+<td></td>
+</tr>
+<tr>
+<td>exec_type</td>
+<td>String</td>
+<td>Exec type</td>
+<td></td>
+</tr>
+<tr>
+<td>exec_value</td>
+<td>decimal</td>
+<td>Exec value</td>
+<td></td>
+</tr>
+<tr>
+<td>fee_rate</td>
+<td>decimal</td>
+<td>Settle fee</td>
+<td></td>
+</tr>
+<tr>
+<td>orderid</td>
+<td>String</td>
+<td>Order id</td>
+<td></td>
+</tr>
+<tr>
+<td>side</td>
+<td>Integer</td>
+<td>Side</td>
+<td></td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Symbol</td>
+<td></td>
+</tr>
+<tr>
+<td>symbol_id</td>
+<td>Integer</td>
+<td>Symbol id</td>
+<td></td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>String</td>
+<td>Update time</td>
+<td></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>Integer</td>
+<td>User id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='query-kline'>Query kline</h2>
 <blockquote>
 <p>Request format</p>
 </blockquote>
@@ -4017,64 +4129,136 @@ HMacSha256({
 <td></td>
 </tr>
 </tbody></table>
+<div class="highlight"><pre class="highlight plaintext"><code>&gt; Response sample
 
-<blockquote>
-<p>Response sample</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_ERROR"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"kline_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16823.2"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-06 02:19:45"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16871"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"86400"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"last_close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16880"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16800"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16871"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1672876800"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"606.929776"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"update_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-06 02:19:45"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.036024"</span><span class="w">
-         </span><span class="p">},</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16823.2"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-06 02:19:46"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16871"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"86400"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"last_close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16880"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16800"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16871"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1672876800"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"606.929776"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"update_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-06 02:19:46"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.036024"</span><span class="w">
-         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>| Field                    | Type    | Description                                                         | Possible values                      |
-|--------------------      |---------|---------------------------------------------------------------------|--------------------------------------|
-| kline_data               | List    | Orders information                                                  |                                      |
-| close                    | String  | Close price                                                         |                                      |
-| create_time              | String  | Create time                                                         |                                      |
-| high                     | String  | High price                                                          |                                |
-| interval                 | String  | KLine type                                                          |                                      |
-| last_close               | String  | Last close price                                                    |                                      |
-| low                      | String  | Low price                                                           |                                      |
-| open                     | String  | Open price                                                          |                                      |
-| symbol                   | String  | Symbol                                                              |                                      |
-| timestamp                | String  | Timestamp                                                           |                                      |
-| turnover                 | String  | Turnover                                                            |                                      |
-| update_time              | String  | Update time                                                         |                                      |
-| volume                   | String  | Volume                                                              |                                      |
+```json
+{
+   "msg": "NO_ERROR",
+   "code": 0,
+   "data": {
+      "kline_data": [
+         {
+            "close": "16823.2",
+            "create_time": "2023-01-06 02:19:45",
+            "high": "16871",
+            "interval": "86400",
+            "last_close": "16880",
+            "low": "16800",
+            "open": "16871",
+            "symbol": "BTCUSDT",
+            "timestamp": "1672876800",
+            "turnover": "606.929776",
+            "update_time": "2023-01-06 02:19:45",
+            "volume": "0.036024"
+         },
+         {
+            "close": "16823.2",
+            "create_time": "2023-01-06 02:19:46",
+            "high": "16871",
+            "interval": "86400",
+            "last_close": "16880",
+            "low": "16800",
+            "open": "16871",
+            "symbol": "BTCUSDT",
+            "timestamp": "1672876800",
+            "turnover": "606.929776",
+            "update_time": "2023-01-06 02:19:46",
+            "volume": "0.036024"
+         }
+      ]
+   },
+   "cid": "test"
+}
 
-</code></pre></div><h1 id='contract-websocket-api'>Contract Websocket API</h1><h2 id='heartbeat'>Heartbeat</h2>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Possible values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>kline_data</td>
+<td>List</td>
+<td>Orders information</td>
+<td></td>
+</tr>
+<tr>
+<td>close</td>
+<td>String</td>
+<td>Close price</td>
+<td></td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>String</td>
+<td>Create time</td>
+<td></td>
+</tr>
+<tr>
+<td>high</td>
+<td>String</td>
+<td>High price</td>
+<td></td>
+</tr>
+<tr>
+<td>interval</td>
+<td>String</td>
+<td>KLine type</td>
+<td></td>
+</tr>
+<tr>
+<td>last_close</td>
+<td>String</td>
+<td>Last close price</td>
+<td></td>
+</tr>
+<tr>
+<td>low</td>
+<td>String</td>
+<td>Low price</td>
+<td></td>
+</tr>
+<tr>
+<td>open</td>
+<td>String</td>
+<td>Open price</td>
+<td></td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Symbol</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>String</td>
+<td>Timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>turnover</td>
+<td>String</td>
+<td>Turnover</td>
+<td></td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>String</td>
+<td>Update time</td>
+<td></td>
+</tr>
+<tr>
+<td>volume</td>
+<td>String</td>
+<td>Volume</td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='contract-websocket-api'>Contract Websocket API</h1><h2 id='heartbeat'>Heartbeat</h2>
 <blockquote>
 <p>Request</p>
 </blockquote>
