@@ -926,7 +926,6 @@ POST /api
 | update_time              | String  | Update time                                                         |                                      |
 | user_id                  | Integer | User id                                                             |                                      |
 
-```
 
 ## Query user trade by symbol
 
@@ -968,6 +967,7 @@ POST /api
 | sort_type   | String | No       |             |                |
 | cid         | String | Yes      |             |                |
 
+```
 
 > Response sample
 
@@ -1006,7 +1006,6 @@ POST /api
 }
 ```
 
-```
 | Field                    | Type    | Description                                                         | Possible values                      |
 |--------------------      |---------|---------------------------------------------------------------------|--------------------------------------|
 | orders                   | List    | Orders information                                                  |                                      |
@@ -1030,8 +1029,6 @@ POST /api
 | symbol_id                | Integer | Symbol id                                                           |                                      |
 | update_time              | String  | Update time                                                         |                                      |
 | user_id                  | Integer | User id                                                             |                                      |
-
-```
 
 ## Query kline
 
@@ -1069,7 +1066,7 @@ POST /api
 | count       | Integer | No       | Kline total Amount you want to search |                 |
 | cid         | String  | No       |                                       |                 |
 
-
+```
 > Response sample
 
 ```json
@@ -1110,7 +1107,7 @@ POST /api
    },
    "cid": "test"
 }
-```
+
 ```
 | Field                    | Type    | Description                                                         | Possible values                      |
 |--------------------      |---------|---------------------------------------------------------------------|--------------------------------------|
@@ -1127,8 +1124,6 @@ POST /api
 | turnover                 | String  | Turnover                                                            |                                      |
 | update_time              | String  | Update time                                                         |                                      |
 | volume                   | String  | Volume                                                              |                                      |
-
-```
 
 # Contract Websocket API
 
