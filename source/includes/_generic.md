@@ -4,7 +4,7 @@ Welcome to the [RubyDex](https://rubydex.com) API documentation. We offer REST a
 ## General API information
 * Rest API base endpoints:
   * Default endpoint: **https://api200.rubydex.com**
-  * TestNet endpoint: **https://testnet-api.rubydex.com** //1 
+  * TestNet endpoint: **https://testnet-api.rubydex.com**
 * WebSocket API base endpoints:
   * Default endpoint: **wss://rubydex.com/ws**
   * TestNet endpoint: **wss://testnet.rubydex.com/ws**
