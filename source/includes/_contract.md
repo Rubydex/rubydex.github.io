@@ -134,63 +134,89 @@ POST /api
 
 ```json
 {
-    "data": {
-        "symbols": [
-            {
-                "adl_enable": "1",
-                "close_by": "test-1",
-                "contract_size": "3",
-                "create_time": "2022-09-20 11:31:00",
-                "expiry_date": "20230920",
-                "funding_interval": "30",
-                "funding_rate": "0.01",
-                "id": 1,
-                "initial_margin": "10000",
-                "maint_margin": "10000",
-                "maker_commission": "100",
-                "max_order_qty": "10000",
-                "max_price": "500",
-                "mini_price_increment": "4",
-                "predicted_rate": "0.03",
-                "risk_limit": "10000",
-                "risk_step": "5",
-                "symbol": 180210,
-                "symbol_cn_name": "180210",
-                "symbol_en_name": "180210",
-                "taker_commission": "100",
-                "ticker_root": "USDT",
-                "update_time": "2022-09-20 11:31:00"
-            }
-        ]
-    },
-    "ret_msg": "NO_ERROR",
-    "ret_code": 0,
-    "cid": ""
+	"msg": "NO_ERROR",
+	"code": 0,
+	"data": {
+		"symbols": [
+			{
+				"activity": "1",
+				"adl_enable": "1",
+				"base_currency": "BTC",
+				"close_by": "500012",
+				"contract_size": "1",
+				"create_time": "2023-01-03 14:31:00",
+				"expiried": "0",
+				"funding_interval": 28800,
+				"funding_symbol": ".BTCUSDTFR",
+				"id": 1,
+				"index_symbol": ".BTCUSDT",
+				"initial_margin": "0.01000000",
+				"maint_margin": "0.00500000",
+				"maker_commission": "0.00020000",
+				"mark_symbol": ".BTCUSDTMP",
+				"max_order_qty": "10.00000000",
+				"max_price": " ",
+				"predicate_funding_symbol": ".BTCUSDTPREDFR",
+				"predicted_rate": "",
+				"price_precision": 1,
+				"qty_precision": 4,
+				"qty_tick_size": "0.00010000",
+				"quote_currency": "USDT",
+				"risk_limit": "",
+				"risk_step": "9",
+				"symbol": "BTCUSDT",
+				"symbol_cn_name": "BTC/USDT",
+				"symbol_en_name": "BTCUSDT",
+				"taker_commission": "0.00060000",
+				"tick_size": "0.10000000",
+				"ticker_root": "USDT",
+				"tip_order_qty": "2.00000000",
+				"update_time": "2023-01-03 14:31:00",
+				"value_precision": 4,
+				"volume_precision": 4
+			}
+		]
+	},
+	"cid": ""
 }
 ```
 | Field                    | Description                          |
 |--------------------------|--------------------------------------|
-| symbol                   | Product symbol                       |
-| symebol_en_name          | Product symbol English name          |
-| index_symbol             | Index price symbol                   |
-| mark_symbol              | Mark price symbol                    |
-| predicate_funding_symbol | Predicate funding symbol             |
-| funding_symbol           | Funding symbol                       |
-| tick_size                | price tick size                      |
-| qty_tick_size            | Quantity tick size                   |
-| price_precision          | price precision                      |
-| max_order_qty            | Maximum order quantity               |
-| tip_order_qty            | Remind when touch tip order quantity |
 | activity                 | Trade active level                   |
+| adl_enable               | Automatic position is enabled        |
+| base_currency            | Base currency                        |
+| close_by                 | Operator                             |
+| contract_size            | Contract size                        |
+| create_time              | Create time                          |
 | expiried                 | go off the market                    |
-| contract_size            | contract size                        |
+| funding_interval         | funding interval                     |
+| funding_symbol           | Funding symbol                       |
+| id                       | id                                   |
+| index_symbol             | Index price symbol                   |
 | initial_margin           | Initial Margin rate                  |
 | maint_margin             | Maintenance Margin rate              |
-| funding_interval         | Funding interval                     |
-| base_currency            | Base currency                        |
-| quote_currency           | Quote currency                       |
-| value_precision          | Value precision                      |
+| maker_commission         | Maker commission                     |
+| mark_symbol              | Mark price symbol                    |
+| max_order_qty            | Maximum order quantity               |
+| max_price                | Max price                            |
+| predicate_funding_symbol | Predicate funding symbol             |
+| predicted_rate           | Predicted rate                       |
+| price_precision          | price precision                      |
 | qty_presicion            | Quantity precision                   |
+| qty_tick_size            | Quantity tick size                   |
+| quote_currency           | Quote currency                       |
+| risk_limit               | Rsik limit                           |
+| risk_step                | Rsik step                            |
+| symbol                   | Product symbol                       |
+| symbol_cn_name           | Product symbol chinese name          |
+| symebol_en_name          | Product symbol english name          |
+| taker_commission         | Taker commission                     |
+| tick_size                | Price tick size                      |
+| ticker_root              | Ticker root                          |
+| tip_order_qty            | Remind when touch tip order quantity |
+| update_time              | Update time                          |
+| value_precision          | Value precision                      |
+| volume_precision         | Chain precision                      |
 
 ## Common order fields
 
@@ -318,7 +344,7 @@ POST /api
 ```
 
 
-## Amend order by order ID
+## Update order by order ID
 
 > Request example
 
@@ -436,11 +462,23 @@ POST /api
 | server_name | String | Yes      |             | TradeSvr       |
 | method      | String | Yes      |             | cancelAll      |
 | content     | Object | Yes      |             |                |
-| symbol      | String | Yes      |             |                |
-| order_id    | String | Yes      |             |                |
-| cid         | String | Yes      |             |                |
-| text        | String | Yes      |             |                |
+|    symbol   | String | Yes      |             |                |
+|    order_id | String | Yes      |             |                |
+|    cid      | String | Yes      |             |                |
+|    text     | String | Yes      |             |                |
 
+> Response sample
+
+```json
+{
+   "data": {
+             
+},
+"ret_msg": "NO_ERROR",
+"ret_code": 0,
+"cid": "test-123"
+}
+```
 
 ## Query trading account
 
@@ -455,7 +493,7 @@ POST /api
 {
    "server_name": "AdminSvr",
    "method": "queryBalance",
-   "content": {      
+   "content": {
       "cid": "test-123"
    }
 }
@@ -466,45 +504,47 @@ POST /api
 | server_name | String  | Yes      |             | AdminSvr       |
 | method      | String  | Yes      |             | queryBalance   |
 | content     | Object  | Yes      |             |                |
-| cid         | String  | Yes      |             |                |
+|       cid   | String  | Yes      |             |                |
 
 > Response sample
 
 ```json
 {
-   "data": {
-      "balances": [
-         {
-            "account_balance": "10000",
-            "account_id": 10000,
-            "bonus_balance": "12",
-            "close_by": "sys",
-            "currency": 1,
-            "id": 1,
-            "update_time": "2022-09-18 13:21:37",
-            "used_balance": "2000",
-            "user_id": 10000
-         }
-      ]
-   },
-   "ret_msg": "NO_ERROR",
-   "ret_code": 0,
-   "cid": "test-123"
+	"msg": "NO_ERROR",
+	"code": 0,
+	"data": {
+		"balances": [
+			{
+				"account_balance": 1289.293332,
+				"account_id": 705232705,
+				"bonus_balance": 0.0,
+				"close_by": "500020",
+				"currency": "USDT",
+				"currency_id": 1,
+				"id": 0,
+				"lock_balance": 181.0,
+				"update_time": "2023-03-07 02:00:00",
+				"used_balance": 435.369406,
+				"user_id": 500020
+			}
+		]
+	}
 }
 ```
 
 | Field           | Type    | Description                                                         | Possible values |
 |-----------------|---------|---------------------------------------------------------------------|-----------------|
-| balance         | List    | Balance information                                                 |                 |
-| user_id         | Integer | User id                                                             |                 |
-| account_id      | Integer | Account id                                                          |                 |
-| id              | Integer | Self-growth id                                                      |                 |
 | account_balance | String  | User total account balance                                          |                 |
-| currency        | Integer | trading account's settle currency. Use to identify trading account. | 1:USDT          |
-| used_balance    | String  | User used balance                                                   |                 |
+| account_id      | Integer | Account id                                                          |                 |
 | bonus_balance   | String  | User bonus balance                                                  |                 |
-| update_time     | String  | Last update time                                                    |                 |
 | close_by        | String  | Last operator                                                       |                 |
+| currency        | String  | Trading account's settle currency. Use to identify trading account. | 1:USDT          |
+| currency_id     | Integer | Currency id                                                         |                 |
+| id              | Integer | Self-growth id                                                      |                 |
+| lock_balance    | decimal | Lock balance                                                        |                 |
+| update_time     | String  | Last update time                                                    |                 |
+| user_id         | Integer | User id                                                             |                 |
+| used_balance    | decimal | User used balance                                                   |                 |
 
 ## Query positions by symbol
 
@@ -544,85 +584,97 @@ POST /api
 
 ```json
 {
-   "data": {
-      "positions": [
-         {
-            "account_id": 10000,
-            "avg_entry_px": "3.56",
-            "bank_rupt_comm_fee": "3000",
-            "bank_rupt_price": "3.1",
-            "buy_leaves_qty": "5000",
-            "buy_leaves_value": "3000",
-            "buy_value_to_cost": "3",
-            "close_by": "test-1",
-            "currency": 1,
-            "deleverage_percentile": "2",
-            "display_leverage": "2",
-            "free_cost": "3000",
-            "free_qty": "3000",
-            "id": 1,
-            "init_margin_rate": "50",
-            "leverage": "0",
-            "liq_price": "1",
-            "maint_margin_rate": "30",
-            "order_cost": "5000",
-            "pos_balance": "2000",
-            "pos_cost": "3000",
-            "position_margin": "400",
-            "risk_limit": "8000",
-            "sell_leaves_qty": "4000",
-            "sell_leaves_value": "50000",
-            "sell_value_to_cost": "4",
-            "side": 1,
-            "size": "6000",
-            "status": 1,
-            "symbol": 180210,
-            "update_time": "2022-09-20 17:58:00",
-            "user_id": 10000,
-            "value": "90000"
-         }
-      ]
-   },
-   "ret_msg": "NO_ERROR",
-   "ret_code": 0,
-   "cid": "test-123"
+	"msg": "NO_ERROR",
+	"code": 0,
+	"data": {
+		"positions": [
+			{
+				"account_id": 705232705,
+				"avg_entry_px": 20307.997465,
+				"bank_rupt_comm_fee": 2.050702,
+				"bank_rupt_price": 18277.2,
+				"buy_leaves_qty": 0.0,
+				"buy_leaves_value": 0.0,
+				"buy_value_to_cost": 0.10114,
+				"close_by": "500020",
+				"closed_pnl": -30.266474,
+				"currency": "USDT",
+				"currency_id": 1,
+				"deleverage_percentile": 0.0,
+				"display_leverage": 10.0,
+				"external_create_time": "1678147200000639337",
+				"free_cost": 0.0,
+				"free_qty": -0.187,
+				"id": 0,
+				"init_margin_rate": 0.1,
+				"leverage": "10.0",
+				"liq_price": 18378.8,
+				"maint_margin_rate": 0.005,
+				"order_cost": 0.0,
+				"pos_balance": 381.810255,
+				"pos_cost": 381.810255,
+				"position_margin": 379.759553,
+				"risk_limit": 500000.0,
+				"sell_leaves_qty": 0.0,
+				"sell_leaves_value": 0.0,
+				"sell_value_to_cost": 0.0,
+				"side": 1,
+				"size": 0.187,
+				"status": 0,
+				"symbol": "BTCUSDT",
+				"symbol_id": 1,
+				"update_time": "2023-03-07 02:00:00",
+				"user_id": 500020,
+				"value": 3797.595526
+			}
+		]
+	},
+	"cid": "test-123"
 }
 ```
 
-| Field              | Type    | Description                                                         | Possible values                      |
-|--------------------|---------|---------------------------------------------------------------------|--------------------------------------|
-| position           | List    | Position information                                                |                                      |
-| user_id            | Integer | User id                                                             |                                      |
-| account_id         | Integer | Account id                                                          |                                      |
-| id                 | Integer | Self-growth id                                                      |                                      |
-| account_balance    | String  | User total account balance                                          |                                      |
-| currency           | String  | trading account's settle currency. Use to identify trading account. | 1:USDT                               |
-| symbol             | String  | Trading symbol                                                      |                                      |
-| side               | Integer | Postion direction                                                   | 1:buy,2:sell                         |
-| close_by           | String  | Last operator                                                       |                                      |
-| status             | String  | Position status                                                     | 0:normal;1.liqdation;2.adl,3:disable |
-| leverage           | String  | Postion Leverage                                                    | 0:cross(100X); >0 isolate            |
-| init_margin_rate   | String  | Initial margin rate                                                 |                                      |
-| maint_margin_rate  | String  | Maintenance margin rate                                             |                                      |
-| risk_limit         | String  | Risk limit                                                          |                                      |
-| size               | String  | Position size                                                       |                                      |
-| value              | String  | Positon total value                                                 |                                      |
-| avg_entry_price    | String  | Position average entry price                                        |                                      |
-| pos_cost           | String  | Position value Margin based on leverage                             |                                      |
-| pos_balance        | Sring   | Position Remaining Balance Amount                                   |                                      |
-| bank_rupt_comm_fee | String  | Bankruptcy Price Liquidation Fees                                   |                                      |
-| position_margin    | String  |                                                                     |                                      |
-| display_leverage   | String  | Display leverage                                                    |                                      |
-| bank_rupt_price    | String  | Bankrupt price                                                      |                                      |
-| liq_price          | String  | Liquidation price                                                   |                                      |
-| buy_leaves_qty     | String  | Buy side  Cumulative pending orders remaining quantity              |                                      |
-| buy_leaves_value   | String  | Sell side  Cumulative pending order value                           |                                      |
-| sell_leaves_qty    | String  | Buy side  Cumulative pending orders remaining quantity              |                                      |
-| buy_leaves_value   | String  | Sell side  Cumulative pending order value                           |                                      |
-| closed_pnl         | String  | Position realised PNL                                               |                                      |
-| update_time        | String  | Update time                                                         |                                      |
-| close_by           | String  | Last operator                                                       |                                      |
-
+| Field                    | Type    | Description                                                         | Possible values                      |
+|--------------------      |---------|---------------------------------------------------------------------|--------------------------------------|
+| position                 | List    | Position information                                                |                                      |
+| account_id               | Integer | Account id                                                          |                                      |
+| avg_entry_price          | decimal | Position average entry price                                        |                                      |
+| bank_rupt_comm_fee       | decimal | Bankruptcy Price Liquidation Fees                                   |                                      |
+| bank_rupt_price          | decimal | Bankrupt price                                                      |                                      |
+| buy_leaves_qty           | decimal | Buy side  Cumulative pending orders remaining quantity              |                                      |
+| buy_leaves_value         | decimal | Buy side  Cumulative pending order value                            |                                      |
+| buy_value_to_cost        | decimal | Coefficient from value to cost in the direction of Buy              |                                      |
+| close_by                 | String  | Last operator                                                       |                                      |
+| closed_pnl               | decimal | Position realised PNL                                               |                                      |
+| currency                 | String  | trading account's settle currency. Use to identify trading account. | 1:USDT                               |
+| currency_id              | Integer | Currency id                                                         |                                      |
+| deleverage_percentile    | decimal | Rank of automatic position reduction ranking                        |                                      |
+| display_leverage         | decimal | Display leverage                                                    |                                      |
+| external_create_time     | String  | External create time                                                |                                      |
+| free_cost                | decimal | Buy | Sell difference between OrderMargin in two directions         |                                      |
+| free_qty                 | decimal | Size of positions that haven't been deducted by the active order    |                                      |
+| id                       | Integer | Self-growth id                                                      |                                      |
+| init_margin_rate         | decimal | Initial margin rate                                                 |                                      |
+| leverage                 | String  | Postion Leverage                                                    | 0:cross(100X); >0 isolate            |
+| liq_price                | decimal | Liquidation price                                                   |                                      |
+| maint_margin_rate        | decimal | Maintenance margin rate                                             |                                      |
+| order_cost               | decimal | Occupancy cost of activity order                                    |                                      |
+| pos_balance              | decimal | Position Remaining Balance Amount                                   |                                      |
+| pos_cost                 | decimal | Position value Margin based on leverage                             |                                      |
+| position_margin          | decimal | Position margin                                                     |                                      |
+| pos_balance              | decimal | Margin converted from position value to level                       |                                      |
+| pos_cost                 | decimal | Margin converted from position value to level                       |                                      |
+| risk_limit               | decimal | Risk limit                                                          |                                      |
+| sell_leaves_qty          | decimal | Sell side  Cumulative pending orders remaining quantity             |                                      |
+| sell_leaves_value        | decimal | Sell side  Cumulative pending orders value                          |                                      |
+| sell_value_to_cost       | decimal | Coefficient from value to cost in the direction of Sell             |                                      |
+| side                     | Integer | Postion direction                                                   | 1:buy,2:sell                         |
+| size                     | decimal | Position size                                                       |                                      |
+| status                   | Integer | Position status                                                     | 0:normal;1.liqdation;2.adl,3:disable |
+| symbol                   | String  | Trading symbol                                                      |                                      |
+| symbol_id                | Integer | Symbol id                                                           |                                      |
+| update_time              | String  | Update time                                                         |                                      |
+| user_id                  | Integer | User id                                                             |                                      |
+| value                    | decimal | Positon total value                                                 |                                      |                   
 
 ## Set leverage
 
@@ -705,7 +757,6 @@ POST /api
    "data": {
        
 },
-"ret_msg": "TE_CANNOT_CHANGE_POSITION_MARGIN_WITHOUT_POSITION",
 "ret_code": 2006,
 "cid": "test-123"
 }
@@ -722,14 +773,19 @@ POST /api
 
 ```json
 {
-   "server_name": "AdminSvr",
-   "method": "queryOrder",
-   "content": {
-      "ord_status": "5,6",
-      "start_date": "2022-09-20",
-      "end_date": "2022-09-21",
-      "page_num": 0
-   }
+	"server_name": "AdminSvr",
+	"method": "queryOrder",
+	"content": {
+		"ord_status": "5,6,8",
+		"order_type": "2",
+		"start_date": "2022-09-20",
+		"end_date": "2023-10-20",
+		"page_num": 0,
+		"page_size": 10,
+		"sort_field": "update_time",
+		"sort_type": "asc",
+		"cid": "test-123"
+	}
 }
 
 ```
@@ -738,72 +794,138 @@ POST /api
 | server_name  | String  | Yes      |             | AdminSvr                                                                                     |
 | method       | String  | Yes      |             | queryOrder                                                                                   |
 | content      | Object  | Yes      |             |                                                                                              |
-| order_status | Integer | Yes      |             | 1.untriggered,2.Deactived,3.Triggered,4.Rejected,5.New,6.PartiallyFilled,7.Filled,8.Canceled |
+| order_status | String  | Yes      |             | 1.untriggered,2.Deactived,3.Triggered,4.Rejected,5.New,6.PartiallyFilled,7.Filled,8.Canceled |
+| order_type   | String  | Yes      |             |                                                                                              |
 | start_date   | String  | Yes      |             |                                                                                              |
 | end_date     | String  | Yes      |             |                                                                                              |
-| page_num     | String  | Yes      |             |                                                                                              |
+| page_num     | Integer | Yes      |             |                                                                                              |
+| page_size    | Integer | Yes      |             |                                                                                              |
+| sort_field   | String  | No       |             |                                                                                              |
+| sort_type    | String  | No       |             |                                                                                              |
+| cid          | String  | No       |             |                                                                                              |
 
 
 > Response sample
 
 ```json
 {
-   "data": {
-      "orders": [
-         {
-            "account_id": 10000,
-            "action": 1,
-            "action_by": 1,
-            "clord_id": "2022092016090000",
-            "close_by": "test-1",
-            "closed_pnl": "5000",
-            "closed_size": "6000",
-            "create_time": "2022-09-20 16:13:00",
-            "cum_qty": "5000",
-            "cum_value": "3.6",
-            "currency": 1,
-            "cxl_rej_reason": "",
-            "display_qty": "3000",
-            "exec_fee": "0.03",
-            "exec_id": "s23423423424",
-            "exec_inst": "test",
-            "exec_price": "3.67",
-            "exec_qty": "5000",
-            "exec_status": "test",
-            "exec_value": "50000",
-            "fee_rate": "0.02",
-            "id": 1,
-            "last_liquidity_ind": "test",
-            "leaves_qty": "3000",
-            "leaves_value": "20000",
-            "leverage": "0",
-            "ord_status": "5",
-            "ord_type": "1",
-            "order_qty": "5000",
-            "orderid": "s123123123",
-            "orig_ord_type": "1",
-            "peg_offset_value": "3.13",
-            "peg_price_type": "test",
-            "price": "3.23",
-            "side": 1,
-            "sl_trigger": "U2342342",
-            "stop_direction": "3.23",
-            "stop_loss_price": "3.23",
-            "stop_price": "3.35",
-            "symbol": 180210,
-            "take_profit_price": "3.23",
-            "timeinforce": "GTC",
-            "tp_trigger": "T234234234",
-            "tradetype": "trade",
-            "trigger": "3.36",
-            "update_time": "2022-09-20 16:13:00",
-            "user_id": 10000
-         }
-      ]
-   },
-   "ret_msg": "NO_ERROR",
-   "ret_code": 0
+	"msg": "NO_ERROR",
+	"code": 0,
+	"data": {
+		"total": 102571,
+		"orders": [
+			{
+				"account_id": 705232705,
+				"action": 2,
+				"action_by": 1,
+				"biz_error": "0",
+				"clord_id": "C1061038551942037504",
+				"close_by": "500020",
+				"closed_pnl": 0.0,
+				"closed_size": 0.0,
+				"create_time": "2023-01-16 14:28:35",
+				"cum_qty": 0.01,
+				"cum_value": 167.8,
+				"currency": "USDT",
+				"currency_id": 1,
+				"cxl_rej_reason": "0",
+				"display_qty": 0.02,
+				"exec_fee": 0.0,
+				"exec_id": "4ae71336-e44b-39bf-b9d2-752e234818a5",
+				"exec_inst": "0",
+				"exec_price": 0.0,
+				"exec_qty": 0.01,
+				"exec_status": "11",
+				"exec_value": 0.0,
+				"fee_rate": 0.0,
+				"id": 0,
+				"last_liquidity_ind": "0",
+				"leaves_qty": 0.0,
+				"leaves_value": 0.0,
+				"leverage": "0.0",
+				"ord_status": "8",
+				"ord_type": "2",
+				"order_qty": 0.02,
+				"orderid": "1c6cb594-a41a-32d9-890a-981df5d6eaec",
+				"orig_ord_type": "0",
+				"peg_offset_value": 0.0,
+				"peg_price_type": 0.0,
+				"price": 16780.0,
+				"side": 1,
+				"sl_trigger": 0.0,
+				"stop_direction": "0",
+				"stop_loss_price": 0.0,
+				"stop_price": 0.0,
+				"symbol": "BTCUSDT",
+				"symbol_id": 1,
+				"take_profit_price": 0.0,
+				"timeinforce": "1",
+				"tp_trigger": 0.0,
+				"tradetype": "0",
+				"trigger_type": "0",
+				"update_time": "2023-01-16 14:28:35",
+				"user_id": 500020
+			}
+		]
+	},
+	"cid": "test-123"
 }
+
+```
+| Field                    | Type    | Description                                                         | Possible values                      |
+|--------------------      |---------|---------------------------------------------------------------------|--------------------------------------|
+| orders                   | List    | Orders information                                                  |                                      |
+| account_id               | Integer | Account id                                                          |                                      |
+| action                   | Integer | Operat type                                                         |                                      |
+| action_by                | Integer | Classification identification of operation                          |                                      |
+| biz_error                | Integer | Error code                                                          |                                      |
+| clord_id                 | String  | External incoming order number                                      |                                      |
+| close_by                 | String  | Last operator                                                       |                                      |
+| closed_pnl               | decimal | Closing profit and loss                                             |                                      |
+| closed_size              | decimal | Closing size                                                        |                                      |
+| create_time              | String  | Create time                                                         |                                      |
+| cum_qty                  | decimal | Cumulative number of transactions                                   |                                      |
+| cum_value                | decimal | Accumulated transaction value                                       |                                      |
+| currency                 | String  | trading account's settle currency. Use to identify trading account. | 1:USDT                               |
+| currency_id              | Integer | Current id                                                          |                                      |
+| cxl_rej_reason           | String  | Canceled | Rejected, note the specific reason                       |                                      |
+| display_qty              | decimal | Order display quantity                                              |                                      |
+| exec_fee                 | decimal | Settlement expenses                                                 |                                      |
+| exec_id                  | String  | Exec id                                                             |                                      |
+| exec_inst                | String  | Additional instructions                                             |                                      |
+| exec_price               | decimal | Transaction price                                                   |                                      |
+| exec_qty                 | decimal | Number of transactions                                              |                                      |
+| exec_status              | String  | Transaction status                                                  |                                      |
+| exec_value               | decimal | Transaction value                                                   |                                      |
+| fee_rate                 | decimal | settlement rate                                                     |                                      |
+| id                       | Integer | Id                                                                  |                                      |
+| last_liquidity_ind       | String  | Last liquidity                                                      |                                      |
+| leaves_qty               | decimal | Remaining quantity                                                  |                                      |
+| leaves_value             | decimal | Surplus value                                                       |                                      |
+| leverage                 | String  | Position lever                                                      |                                      |
+| ord_status               | String  | Order status                                                        |                                      |
+| ord_type                 | String  | Order type                                                          |                                      |
+| order_qty                | decimal | Order qty                                                           |                                      |
+| orderid                  | String  | Order id                                                            |                                      |
+| orig_ord_type            | String  | Original order type                                                 |                                      |
+| peg_offset_value         | decimal | Track the price distance of stop loss                               |                                      |
+| peg_price_type           | String  | Peg price type                                                      |                                      |
+| price                    | decimal | Price                                                               |                                      |
+| side                     | Integer | Side                                                                |                                      |
+| sl_trigger               | decimal | Sl trigger                                                          |                                      |
+| stop_direction           | String  | Calculated trigger price direction                                  |                                      |
+| stop_loss_price          | decimal | Stop loss price                                                     |                                      |
+| stop_price               | decimal | Stop price                                                          |                                      |
+| symbol                   | String  | Symbol                                                              |                                      |
+| symbol_id                | Integer | Symbol id                                                           |                                      |
+| take_profit_price        | decimal | Opening order with closing profit price                             |                                      |
+| timeinforce              | String  | Time in force                                                       |                                      |
+| tp_trigger               | decimal | Tp trigger                                                          |                                      |
+| tradetype                | String  | Trade type                                                          |                                      |
+| trigger_type             | String  | Trigger type                                                        |                                      |
+| update_time              | String  | Update time                                                         |                                      |
+| user_id                  | Integer | User id                                                             |                                      |
+
 ```
 
 ## Query user trade by symbol
@@ -817,15 +939,18 @@ POST /api
 
 ```json
 {
-   "server_name": "AdminSvr",
-   "method": "queryExecOrder",
-   "content": {
-      "symbol": "BTCUSDT",
-      "start_date": "2022-09-20",
-      "end_date": "2022-09-21",
-      "page_num": 0,
-      "cid": "test-123"
-   }
+    "server_name": "AdminSvr",
+    "method": "queryExecOrder",
+    "content": {
+        "symbol": "BTCUSDT",
+        "start_date": "2022-09-20",
+        "end_date": "2023-09-21",
+        "page_num": 0,
+        "page_size": 10,
+        "sort_field": "update_time",
+        "sort_type": "asc",
+        "cid": "test-123"
+    }
 }
 
 ```
@@ -837,7 +962,10 @@ POST /api
 | symbol      | String | Yes      |             |                |
 | start_date  | String | Yes      |             |                |
 | end_date    | String | Yes      |             |                |
-| page_num    | String | Yes      |             |                |
+| page_num    | Integer| Yes      |             |                |
+| page_size   | Integer| Yes      |             |                |
+| sort_field  | String | No       |             |                |
+| sort_type   | String | No       |             |                |
 | cid         | String | Yes      |             |                |
 
 
@@ -845,33 +973,64 @@ POST /api
 
 ```json
 {
-   "data": {
-      "orders": [
-         {
-            "account_id": 10000,
-            "close_by": "test-1",
-            "closed_pnl": "4000",
-            "closed_size": "5000",
-            "create_time": "2022-09-20 17:50:00",
-            "currency": 1,
-            "exec_fee": "200",
-            "exec_id": "e123123123",
-            "exec_price": "3.6",
-            "exec_qty": "6000",
-            "exec_value": "5000",
-            "fee_rate": "0.02",
-            "order_id": "s234234",
-            "side": 1,
-            "symbol": "BTCUSDT"
-            "update_time": "2022-09-20 17:50:00",
-            "user_id": 10000
-         }
-      ]
-   },
-   "ret_msg": "NO_ERROR",
-   "ret_code": 0,
-   "cid": "test-123"
+	"msg": "NO_ERROR",
+	"code": 0,
+	"data": {
+		"total": 1119,
+		"orders": [
+			{
+				"account_id": 705232705,
+				"close_by": "500020",
+				"closed_pnl": 0.0,
+				"closed_size": 0.0,
+				"create_time": "2023-01-16 01:24:17",
+				"currency": "USDT",
+				"currency_id": 1,
+				"exec_fee": 0.24,
+				"exec_id": "9c1626ff-5b18-3a39-b23d-25d7cdc0bb64",
+				"exec_price": 1200.0,
+				"exec_qty": 1.0,
+				"exec_type": "6",
+				"exec_value": 1200.0,
+				"fee_rate": 0.0002,
+				"order_id": "9b0aff86-06c0-370b-9ea8-e44058a2edc9",
+				"side": "1",
+				"symbol": "ETHUSDT",
+				"symbol_id": 11,
+				"update_time": "2023-01-16 01:24:17",
+				"user_id": 500020
+			}
+		]
+	},
+	"cid": "test-123"
 }
+```
+
+```
+| Field                    | Type    | Description                                                         | Possible values                      |
+|--------------------      |---------|---------------------------------------------------------------------|--------------------------------------|
+| orders                   | List    | Orders information                                                  |                                      |
+| account_id               | Integer | Account id                                                          |                                      |
+| close_by                 | String  | Last operator                                                       |                                      |
+| closed_pnl               | decimal | Closing profit and loss                                             |                                      |
+| closed_size              | decimal | Closing size                                                        |                                      |
+| create_time              | String  | Create time                                                         |                                      |
+| currency                 | String  | trading account's settle currency. Use to identify trading account. | 1:USDT                               |
+| currency_id              | Integer | Current id                                                          |                                      |
+| exec_fee                 | decimal | Settlement expenses                                                 |                                      |
+| exec_id                  | String  | Exec id                                                             |                                      |
+| exec_price               | decimal | Transaction price                                                   |                                      |
+| exec_qty                 | decimal | Number of transactions                                              |                                      |
+| exec_type                | String  | Exec type                                                           |                                      |
+| exec_value               | decimal | Exec value                                                          |                                      |
+| fee_rate                 | decimal | Settle fee                                                          |                                      |
+| orderid                  | String  | Order id                                                            |                                      |
+| side                     | Integer | Side                                                                |                                      |
+| symbol                   | String  | Symbol                                                              |                                      |
+| symbol_id                | Integer | Symbol id                                                           |                                      |
+| update_time              | String  | Update time                                                         |                                      |
+| user_id                  | Integer | User id                                                             |                                      |
+
 ```
 
 ## Query kline
@@ -885,7 +1044,7 @@ POST /api
 
 ```json
 {
-   "serverName": "MDHistSvr",
+   "serverName": "AdminSvr",
    "method": "search",
    "content": {
       "symbol": "BTCUSDT",
@@ -900,7 +1059,7 @@ POST /api
 ```
 | Field       | Type    | Requried | Description                           | Possible Value  |
 |-------------|---------|----------|---------------------------------------|-----------------|
-| server_name | String  | Yes      |                                       | MDHistSvr       |
+| server_name | String  | Yes      |                                       | AdminSvr        |
 | method      | String  | Yes      |                                       | search          |
 | content     | Object  | Yes      |                                       |                 |
 | symbol      | String  | Yes      |                                       |                 |
@@ -952,7 +1111,24 @@ POST /api
    "cid": "test"
 }
 ```
+```
+| Field                    | Type    | Description                                                         | Possible values                      |
+|--------------------      |---------|---------------------------------------------------------------------|--------------------------------------|
+| kline_data               | List    | Orders information                                                  |                                      |
+| close                    | String  | Close price                                                         |                                      |
+| create_time              | String  | Create time                                                         |                                      |
+| high                     | String  | High price                                                          |                                |
+| interval                 | String  | KLine type                                                          |                                      |
+| last_close               | String  | Last close price                                                    |                                      |
+| low                      | String  | Low price                                                           |                                      |
+| open                     | String  | Open price                                                          |                                      |
+| symbol                   | String  | Symbol                                                              |                                      |
+| timestamp                | String  | Timestamp                                                           |                                      |
+| turnover                 | String  | Turnover                                                            |                                      |
+| update_time              | String  | Update time                                                         |                                      |
+| volume                   | String  | Volume                                                              |                                      |
 
+```
 
 # Contract Websocket API
 
