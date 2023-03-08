@@ -752,7 +752,7 @@
                     <a href="#place-order" class="toc-h2 toc-link" data-title="Place order">Place order</a>
                   </li>
                   <li>
-                    <a href="#amend-order-by-order-id" class="toc-h2 toc-link" data-title="Amend order by order ID">Amend order by order ID</a>
+                    <a href="#update-order-by-order-id" class="toc-h2 toc-link" data-title="Update order by order ID">Update order by order ID</a>
                   </li>
                   <li>
                     <a href="#cancel-order-by-order-id" class="toc-h2 toc-link" data-title="Cancel order by order ID">Cancel order by order ID</a>
@@ -774,9 +774,6 @@
                   </li>
                   <li>
                     <a href="#query-orders-by-order-staus" class="toc-h2 toc-link" data-title="Query  orders by order staus">Query  orders by order staus</a>
-                  </li>
-                  <li>
-                    <a href="#query-user-trade-by-symbol" class="toc-h2 toc-link" data-title="Query user trade by symbol">Query user trade by symbol</a>
                   </li>
                   <li>
                     <a href="#query-kline" class="toc-h2 toc-link" data-title="Query kline">Query kline</a>
@@ -1714,37 +1711,49 @@ HMacSha256({
 <p>Response sample</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_ERROR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"symbols"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"activity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"adl_enable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"close_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-1"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"contract_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-20 11:31:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"expiry_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20230920"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"funding_interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"funding_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"close_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500012"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"contract_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-03 14:31:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"expiried"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"funding_interval"</span><span class="p">:</span><span class="w"> </span><span class="mi">28800</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"funding_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">".BTCUSDTFR"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"initial_margin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"maint_margin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"maker_commission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"max_order_qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"max_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"mini_price_increment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"predicted_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.03"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"risk_limit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"risk_step"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="mi">180210</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"symbol_cn_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"180210"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"symbol_en_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"180210"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"taker_commission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"index_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">".BTCUSDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"initial_margin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01000000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maint_margin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00500000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maker_commission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00020000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"mark_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">".BTCUSDTMP"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"max_order_qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00000000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"max_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">" "</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"predicate_funding_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">".BTCUSDTPREDFR"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"predicted_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"price_precision"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"qty_precision"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"qty_tick_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00010000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"quote_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"risk_limit"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"risk_step"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol_cn_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol_en_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"taker_commission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00060000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"tick_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.10000000"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"ticker_root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"update_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-20 11:31:00"</span><span class="w">
+                </span><span class="nl">"tip_order_qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.00000000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"update_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-03 14:31:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"value_precision"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"volume_precision"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"ret_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_ERROR"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ret_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1755,60 +1764,48 @@ HMacSha256({
 </tr>
 </thead><tbody>
 <tr>
-<td>symbol</td>
-<td>Product symbol</td>
-</tr>
-<tr>
-<td>symebol_en_name</td>
-<td>Product symbol English name</td>
-</tr>
-<tr>
-<td>index_symbol</td>
-<td>Index price symbol</td>
-</tr>
-<tr>
-<td>mark_symbol</td>
-<td>Mark price symbol</td>
-</tr>
-<tr>
-<td>predicate_funding_symbol</td>
-<td>Predicate funding symbol</td>
-</tr>
-<tr>
-<td>funding_symbol</td>
-<td>Funding symbol</td>
-</tr>
-<tr>
-<td>tick_size</td>
-<td>price tick size</td>
-</tr>
-<tr>
-<td>qty_tick_size</td>
-<td>Quantity tick size</td>
-</tr>
-<tr>
-<td>price_precision</td>
-<td>price precision</td>
-</tr>
-<tr>
-<td>max_order_qty</td>
-<td>Maximum order quantity</td>
-</tr>
-<tr>
-<td>tip_order_qty</td>
-<td>Remind when touch tip order quantity</td>
-</tr>
-<tr>
 <td>activity</td>
 <td>Trade active level</td>
+</tr>
+<tr>
+<td>adl_enable</td>
+<td>Automatic position is enabled</td>
+</tr>
+<tr>
+<td>base_currency</td>
+<td>Base currency</td>
+</tr>
+<tr>
+<td>close_by</td>
+<td>Operator</td>
+</tr>
+<tr>
+<td>contract_size</td>
+<td>Contract size</td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>Create time</td>
 </tr>
 <tr>
 <td>expiried</td>
 <td>go off the market</td>
 </tr>
 <tr>
-<td>contract_size</td>
-<td>contract size</td>
+<td>funding_interval</td>
+<td>funding interval</td>
+</tr>
+<tr>
+<td>funding_symbol</td>
+<td>Funding symbol</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id</td>
+</tr>
+<tr>
+<td>index_symbol</td>
+<td>Index price symbol</td>
 </tr>
 <tr>
 <td>initial_margin</td>
@@ -1819,24 +1816,92 @@ HMacSha256({
 <td>Maintenance Margin rate</td>
 </tr>
 <tr>
-<td>funding_interval</td>
-<td>Funding interval</td>
+<td>maker_commission</td>
+<td>Maker commission</td>
 </tr>
 <tr>
-<td>base_currency</td>
-<td>Base currency</td>
+<td>mark_symbol</td>
+<td>Mark price symbol</td>
+</tr>
+<tr>
+<td>max_order_qty</td>
+<td>Maximum order quantity</td>
+</tr>
+<tr>
+<td>max_price</td>
+<td>Max price</td>
+</tr>
+<tr>
+<td>predicate_funding_symbol</td>
+<td>Predicate funding symbol</td>
+</tr>
+<tr>
+<td>predicted_rate</td>
+<td>Predicted rate</td>
+</tr>
+<tr>
+<td>price_precision</td>
+<td>price precision</td>
+</tr>
+<tr>
+<td>qty_presicion</td>
+<td>Quantity precision</td>
+</tr>
+<tr>
+<td>qty_tick_size</td>
+<td>Quantity tick size</td>
 </tr>
 <tr>
 <td>quote_currency</td>
 <td>Quote currency</td>
 </tr>
 <tr>
+<td>risk_limit</td>
+<td>Rsik limit</td>
+</tr>
+<tr>
+<td>risk_step</td>
+<td>Rsik step</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>Product symbol</td>
+</tr>
+<tr>
+<td>symbol_cn_name</td>
+<td>Product symbol chinese name</td>
+</tr>
+<tr>
+<td>symebol_en_name</td>
+<td>Product symbol english name</td>
+</tr>
+<tr>
+<td>taker_commission</td>
+<td>Taker commission</td>
+</tr>
+<tr>
+<td>tick_size</td>
+<td>Price tick size</td>
+</tr>
+<tr>
+<td>ticker_root</td>
+<td>Ticker root</td>
+</tr>
+<tr>
+<td>tip_order_qty</td>
+<td>Remind when touch tip order quantity</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>Update time</td>
+</tr>
+<tr>
 <td>value_precision</td>
 <td>Value precision</td>
 </tr>
 <tr>
-<td>qty_presicion</td>
-<td>Quantity precision</td>
+<td>volume_precision</td>
+<td>Chain precision</td>
 </tr>
 </tbody></table>
 <h2 id='common-order-fields'>Common order fields</h2>
@@ -2182,7 +2247,7 @@ HMacSha256({
     </span><span class="nl">"ret_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='amend-order-by-order-id'>Amend order by order ID</h2>
+</span></code></pre></div><h2 id='update-order-by-order-id'>Update order by order ID</h2>
 <blockquote>
 <p>Request example</p>
 </blockquote>
@@ -2455,7 +2520,19 @@ HMacSha256({
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='query-trading-account'>Query trading account</h2>
+
+<blockquote>
+<p>Response sample</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+</span><span class="p">},</span><span class="w">
+</span><span class="nl">"ret_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_ERROR"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"ret_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+</span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='query-trading-account'>Query trading account</h2>
 <blockquote>
 <p>Request format</p>
 </blockquote>
@@ -2467,7 +2544,7 @@ HMacSha256({
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
    </span><span class="nl">"server_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AdminSvr"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queryBalance"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">      
+   </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2516,24 +2593,25 @@ HMacSha256({
 <p>Response sample</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"account_balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"bonus_balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"close_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sys"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"update_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-18 13:21:37"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"used_balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
-         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="nl">"ret_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_ERROR"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"ret_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_ERROR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"account_balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">1289.293332</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">705232705</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"bonus_balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"close_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500020"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lock_balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">181.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"update_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-07 02:00:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"used_balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">435.369406</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">500020</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <table><thead>
@@ -2545,15 +2623,9 @@ HMacSha256({
 </tr>
 </thead><tbody>
 <tr>
-<td>balance</td>
-<td>List</td>
-<td>Balance information</td>
-<td></td>
-</tr>
-<tr>
-<td>user_id</td>
-<td>Integer</td>
-<td>User id</td>
+<td>account_balance</td>
+<td>String</td>
+<td>User total account balance</td>
 <td></td>
 </tr>
 <tr>
@@ -2563,33 +2635,39 @@ HMacSha256({
 <td></td>
 </tr>
 <tr>
+<td>bonus_balance</td>
+<td>String</td>
+<td>User bonus balance</td>
+<td></td>
+</tr>
+<tr>
+<td>close_by</td>
+<td>String</td>
+<td>Last operator</td>
+<td></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>Trading account&#39;s settle currency. Use to identify trading account.</td>
+<td>1:USDT</td>
+</tr>
+<tr>
+<td>currency_id</td>
+<td>Integer</td>
+<td>Currency id</td>
+<td></td>
+</tr>
+<tr>
 <td>id</td>
 <td>Integer</td>
 <td>Self-growth id</td>
 <td></td>
 </tr>
 <tr>
-<td>account_balance</td>
-<td>String</td>
-<td>User total account balance</td>
-<td></td>
-</tr>
-<tr>
-<td>currency</td>
-<td>Integer</td>
-<td>trading account&#39;s settle currency. Use to identify trading account.</td>
-<td>1:USDT</td>
-</tr>
-<tr>
-<td>used_balance</td>
-<td>String</td>
-<td>User used balance</td>
-<td></td>
-</tr>
-<tr>
-<td>bonus_balance</td>
-<td>String</td>
-<td>User bonus balance</td>
+<td>lock_balance</td>
+<td>decimal</td>
+<td>Lock balance</td>
 <td></td>
 </tr>
 <tr>
@@ -2599,9 +2677,15 @@ HMacSha256({
 <td></td>
 </tr>
 <tr>
-<td>close_by</td>
-<td>String</td>
-<td>Last operator</td>
+<td>user_id</td>
+<td>Integer</td>
+<td>User id</td>
+<td></td>
+</tr>
+<tr>
+<td>used_balance</td>
+<td>decimal</td>
+<td>User used balance</td>
 <td></td>
 </tr>
 </tbody></table>
@@ -2698,48 +2782,52 @@ HMacSha256({
 <p>Response sample</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"positions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"avg_entry_px"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.56"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"bank_rupt_comm_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"bank_rupt_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.1"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"buy_leaves_qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"buy_leaves_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"buy_value_to_cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"close_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-1"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"deleverage_percentile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"display_leverage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"free_cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"free_qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"init_margin_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"liq_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"maint_margin_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"order_cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"pos_balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"pos_cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"position_margin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"risk_limit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"sell_leaves_qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"sell_leaves_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"sell_value_to_cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="mi">180210</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"update_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-20 17:58:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90000"</span><span class="w">
-         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="nl">"ret_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_ERROR"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"ret_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_ERROR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"positions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">705232705</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"avg_entry_px"</span><span class="p">:</span><span class="w"> </span><span class="mf">20307.997465</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"bank_rupt_comm_fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.050702</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"bank_rupt_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">18277.2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"buy_leaves_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"buy_leaves_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"buy_value_to_cost"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.10114</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"close_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500020"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closed_pnl"</span><span class="p">:</span><span class="w"> </span><span class="mf">-30.266474</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"deleverage_percentile"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"display_leverage"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"external_create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1678147200000639337"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"free_cost"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"free_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.187</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"init_margin_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"liq_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">18378.8</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maint_margin_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.005</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"order_cost"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pos_balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">381.810255</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pos_cost"</span><span class="p">:</span><span class="w"> </span><span class="mf">381.810255</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"position_margin"</span><span class="p">:</span><span class="w"> </span><span class="mf">379.759553</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"risk_limit"</span><span class="p">:</span><span class="w"> </span><span class="mf">500000.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sell_leaves_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sell_leaves_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sell_value_to_cost"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.187</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"update_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-07 02:00:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">500020</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">3797.595526</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <table><thead>
@@ -2757,27 +2845,57 @@ HMacSha256({
 <td></td>
 </tr>
 <tr>
-<td>user_id</td>
-<td>Integer</td>
-<td>User id</td>
-<td></td>
-</tr>
-<tr>
 <td>account_id</td>
 <td>Integer</td>
 <td>Account id</td>
 <td></td>
 </tr>
 <tr>
-<td>id</td>
-<td>Integer</td>
-<td>Self-growth id</td>
+<td>avg_entry_price</td>
+<td>decimal</td>
+<td>Position average entry price</td>
 <td></td>
 </tr>
 <tr>
-<td>account_balance</td>
+<td>bank_rupt_comm_fee</td>
+<td>decimal</td>
+<td>Bankruptcy Price Liquidation Fees</td>
+<td></td>
+</tr>
+<tr>
+<td>bank_rupt_price</td>
+<td>decimal</td>
+<td>Bankrupt price</td>
+<td></td>
+</tr>
+<tr>
+<td>buy_leaves_qty</td>
+<td>decimal</td>
+<td>Buy side  Cumulative pending orders remaining quantity</td>
+<td></td>
+</tr>
+<tr>
+<td>buy_leaves_value</td>
+<td>decimal</td>
+<td>Buy side  Cumulative pending order value</td>
+<td></td>
+</tr>
+<tr>
+<td>buy_value_to_cost</td>
+<td>decimal</td>
+<td>Coefficient from value to cost in the direction of Buy</td>
+<td></td>
+</tr>
+<tr>
+<td>close_by</td>
 <td>String</td>
-<td>User total account balance</td>
+<td>Last operator</td>
+<td></td>
+</tr>
+<tr>
+<td>closed_pnl</td>
+<td>decimal</td>
+<td>Position realised PNL</td>
 <td></td>
 </tr>
 <tr>
@@ -2787,9 +2905,129 @@ HMacSha256({
 <td>1:USDT</td>
 </tr>
 <tr>
-<td>symbol</td>
+<td>currency_id</td>
+<td>Integer</td>
+<td>Currency id</td>
+<td></td>
+</tr>
+<tr>
+<td>deleverage_percentile</td>
+<td>decimal</td>
+<td>Rank of automatic position reduction ranking</td>
+<td></td>
+</tr>
+<tr>
+<td>display_leverage</td>
+<td>decimal</td>
+<td>Display leverage</td>
+<td></td>
+</tr>
+<tr>
+<td>external_create_time</td>
 <td>String</td>
-<td>Trading symbol</td>
+<td>External create time</td>
+<td></td>
+</tr>
+<tr>
+<td>free_cost</td>
+<td>decimal</td>
+<td>Buy</td>
+<td>Sell difference between OrderMargin in two directions</td>
+</tr>
+<tr>
+<td>free_qty</td>
+<td>decimal</td>
+<td>Size of positions that haven&#39;t been deducted by the active order</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>Self-growth id</td>
+<td></td>
+</tr>
+<tr>
+<td>init_margin_rate</td>
+<td>decimal</td>
+<td>Initial margin rate</td>
+<td></td>
+</tr>
+<tr>
+<td>leverage</td>
+<td>String</td>
+<td>Postion Leverage</td>
+<td>0:cross(100X); &gt;0 isolate</td>
+</tr>
+<tr>
+<td>liq_price</td>
+<td>decimal</td>
+<td>Liquidation price</td>
+<td></td>
+</tr>
+<tr>
+<td>maint_margin_rate</td>
+<td>decimal</td>
+<td>Maintenance margin rate</td>
+<td></td>
+</tr>
+<tr>
+<td>order_cost</td>
+<td>decimal</td>
+<td>Occupancy cost of activity order</td>
+<td></td>
+</tr>
+<tr>
+<td>pos_balance</td>
+<td>decimal</td>
+<td>Position Remaining Balance Amount</td>
+<td></td>
+</tr>
+<tr>
+<td>pos_cost</td>
+<td>decimal</td>
+<td>Position value Margin based on leverage</td>
+<td></td>
+</tr>
+<tr>
+<td>position_margin</td>
+<td>decimal</td>
+<td>Position margin</td>
+<td></td>
+</tr>
+<tr>
+<td>pos_balance</td>
+<td>decimal</td>
+<td>Margin converted from position value to level</td>
+<td></td>
+</tr>
+<tr>
+<td>pos_cost</td>
+<td>decimal</td>
+<td>Margin converted from position value to level</td>
+<td></td>
+</tr>
+<tr>
+<td>risk_limit</td>
+<td>decimal</td>
+<td>Risk limit</td>
+<td></td>
+</tr>
+<tr>
+<td>sell_leaves_qty</td>
+<td>decimal</td>
+<td>Sell side  Cumulative pending orders remaining quantity</td>
+<td></td>
+</tr>
+<tr>
+<td>sell_leaves_value</td>
+<td>decimal</td>
+<td>Sell side  Cumulative pending orders value</td>
+<td></td>
+</tr>
+<tr>
+<td>sell_value_to_cost</td>
+<td>decimal</td>
+<td>Coefficient from value to cost in the direction of Sell</td>
 <td></td>
 </tr>
 <tr>
@@ -2799,129 +3037,27 @@ HMacSha256({
 <td>1:buy,2:sell</td>
 </tr>
 <tr>
-<td>close_by</td>
-<td>String</td>
-<td>Last operator</td>
-<td></td>
-</tr>
-<tr>
-<td>status</td>
-<td>String</td>
-<td>Position status</td>
-<td>0:normal;1.liqdation;2.adl,3:disable</td>
-</tr>
-<tr>
-<td>leverage</td>
-<td>String</td>
-<td>Postion Leverage</td>
-<td>0:cross(100X); &gt;0 isolate</td>
-</tr>
-<tr>
-<td>init_margin_rate</td>
-<td>String</td>
-<td>Initial margin rate</td>
-<td></td>
-</tr>
-<tr>
-<td>maint_margin_rate</td>
-<td>String</td>
-<td>Maintenance margin rate</td>
-<td></td>
-</tr>
-<tr>
-<td>risk_limit</td>
-<td>String</td>
-<td>Risk limit</td>
-<td></td>
-</tr>
-<tr>
 <td>size</td>
-<td>String</td>
+<td>decimal</td>
 <td>Position size</td>
 <td></td>
 </tr>
 <tr>
-<td>value</td>
+<td>status</td>
+<td>Integer</td>
+<td>Position status</td>
+<td>0:normal;1.liqdation;2.adl,3:disable</td>
+</tr>
+<tr>
+<td>symbol</td>
 <td>String</td>
-<td>Positon total value</td>
+<td>Trading symbol</td>
 <td></td>
 </tr>
 <tr>
-<td>avg_entry_price</td>
-<td>String</td>
-<td>Position average entry price</td>
-<td></td>
-</tr>
-<tr>
-<td>pos_cost</td>
-<td>String</td>
-<td>Position value Margin based on leverage</td>
-<td></td>
-</tr>
-<tr>
-<td>pos_balance</td>
-<td>Sring</td>
-<td>Position Remaining Balance Amount</td>
-<td></td>
-</tr>
-<tr>
-<td>bank_rupt_comm_fee</td>
-<td>String</td>
-<td>Bankruptcy Price Liquidation Fees</td>
-<td></td>
-</tr>
-<tr>
-<td>position_margin</td>
-<td>String</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>display_leverage</td>
-<td>String</td>
-<td>Display leverage</td>
-<td></td>
-</tr>
-<tr>
-<td>bank_rupt_price</td>
-<td>String</td>
-<td>Bankrupt price</td>
-<td></td>
-</tr>
-<tr>
-<td>liq_price</td>
-<td>String</td>
-<td>Liquidation price</td>
-<td></td>
-</tr>
-<tr>
-<td>buy_leaves_qty</td>
-<td>String</td>
-<td>Buy side  Cumulative pending orders remaining quantity</td>
-<td></td>
-</tr>
-<tr>
-<td>buy_leaves_value</td>
-<td>String</td>
-<td>Sell side  Cumulative pending order value</td>
-<td></td>
-</tr>
-<tr>
-<td>sell_leaves_qty</td>
-<td>String</td>
-<td>Buy side  Cumulative pending orders remaining quantity</td>
-<td></td>
-</tr>
-<tr>
-<td>buy_leaves_value</td>
-<td>String</td>
-<td>Sell side  Cumulative pending order value</td>
-<td></td>
-</tr>
-<tr>
-<td>closed_pnl</td>
-<td>String</td>
-<td>Position realised PNL</td>
+<td>symbol_id</td>
+<td>Integer</td>
+<td>Symbol id</td>
 <td></td>
 </tr>
 <tr>
@@ -2931,9 +3067,15 @@ HMacSha256({
 <td></td>
 </tr>
 <tr>
-<td>close_by</td>
-<td>String</td>
-<td>Last operator</td>
+<td>user_id</td>
+<td>Integer</td>
+<td>User id</td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td>decimal</td>
+<td>Positon total value</td>
 <td></td>
 </tr>
 </tbody></table>
@@ -3100,7 +3242,6 @@ HMacSha256({
    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
 
 </span><span class="p">},</span><span class="w">
-</span><span class="nl">"ret_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TE_CANNOT_CHANGE_POSITION_MARGIN_WITHOUT_POSITION"</span><span class="p">,</span><span class="w">
 </span><span class="nl">"ret_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">2006</span><span class="p">,</span><span class="w">
 </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -3114,14 +3255,19 @@ HMacSha256({
 <p>Request sample</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"server_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AdminSvr"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queryOrder"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"ord_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5,6"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-20"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-21"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"page_num"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-   </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"server_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AdminSvr"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queryOrder"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"ord_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5,6,8"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-20"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-20"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"page_num"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"page_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sort_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update_time"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sort_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -3157,10 +3303,17 @@ HMacSha256({
 </tr>
 <tr>
 <td>order_status</td>
-<td>Integer</td>
+<td>String</td>
 <td>Yes</td>
 <td></td>
 <td>1.untriggered,2.Deactived,3.Triggered,4.Rejected,5.New,6.PartiallyFilled,7.Filled,8.Canceled</td>
+</tr>
+<tr>
+<td>order_type</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>start_date</td>
@@ -3178,8 +3331,36 @@ HMacSha256({
 </tr>
 <tr>
 <td>page_num</td>
-<td>String</td>
+<td>Integer</td>
 <td>Yes</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>page_size</td>
+<td>Integer</td>
+<td>Yes</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sort_field</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sort_type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>cid</td>
+<td>String</td>
+<td>No</td>
 <td></td>
 <td></td>
 </tr>
@@ -3189,81 +3370,409 @@ HMacSha256({
 <p>Response sample</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"action_by"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"clord_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022092016090000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"close_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-1"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"closed_pnl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"closed_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-20 16:13:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"cum_qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"cum_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.6"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"cxl_rej_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"display_qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"exec_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.03"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"exec_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s23423423424"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"exec_inst"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"exec_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.67"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"exec_qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"exec_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"exec_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"fee_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.02"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"last_liquidity_ind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"leaves_qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"leaves_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"ord_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"order_qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"orderid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s123123123"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"orig_ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"peg_offset_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.13"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"peg_price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.23"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"sl_trigger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U2342342"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"stop_direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.23"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"stop_loss_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.23"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"stop_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.35"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="mi">180210</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"take_profit_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.23"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"timeinforce"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GTC"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"tp_trigger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T234234234"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"tradetype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"trigger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.36"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"update_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-20 16:13:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
-         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="nl">"ret_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_ERROR"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"ret_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_ERROR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">102571</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">705232705</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"action_by"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"biz_error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"clord_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C1061038551942037504"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"close_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500020"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closed_pnl"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closed_size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-16 14:28:35"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"cum_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"cum_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">167.8</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"cxl_rej_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"display_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4ae71336-e44b-39bf-b9d2-752e234818a5"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_inst"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fee_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_liquidity_ind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"leaves_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"leaves_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"ord_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"order_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"orderid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1c6cb594-a41a-32d9-890a-981df5d6eaec"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"orig_ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"peg_offset_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"peg_price_type"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">16780.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sl_trigger"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"stop_direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"stop_loss_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"stop_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"take_profit_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"timeinforce"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"tp_trigger"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"tradetype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"trigger_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"update_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-16 14:28:35"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">500020</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='query-user-trade-by-symbol'>Query user trade by symbol</h2>
-<blockquote>
-<p>Request format</p>
-</blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>POST /api
+
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Possible values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orders</td>
+<td>List</td>
+<td>Orders information</td>
+<td></td>
+</tr>
+<tr>
+<td>account_id</td>
+<td>Integer</td>
+<td>Account id</td>
+<td></td>
+</tr>
+<tr>
+<td>action</td>
+<td>Integer</td>
+<td>Operat type</td>
+<td></td>
+</tr>
+<tr>
+<td>action_by</td>
+<td>Integer</td>
+<td>Classification identification of operation</td>
+<td></td>
+</tr>
+<tr>
+<td>biz_error</td>
+<td>Integer</td>
+<td>Error code</td>
+<td></td>
+</tr>
+<tr>
+<td>clord_id</td>
+<td>String</td>
+<td>External incoming order number</td>
+<td></td>
+</tr>
+<tr>
+<td>close_by</td>
+<td>String</td>
+<td>Last operator</td>
+<td></td>
+</tr>
+<tr>
+<td>closed_pnl</td>
+<td>decimal</td>
+<td>Closing profit and loss</td>
+<td></td>
+</tr>
+<tr>
+<td>closed_size</td>
+<td>decimal</td>
+<td>Closing size</td>
+<td></td>
+</tr>
+<tr>
+<td>create_time</td>
+<td>String</td>
+<td>Create time</td>
+<td></td>
+</tr>
+<tr>
+<td>cum_qty</td>
+<td>decimal</td>
+<td>Cumulative number of transactions</td>
+<td></td>
+</tr>
+<tr>
+<td>cum_value</td>
+<td>decimal</td>
+<td>Accumulated transaction value</td>
+<td></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>trading account&#39;s settle currency. Use to identify trading account.</td>
+<td>1:USDT</td>
+</tr>
+<tr>
+<td>currency_id</td>
+<td>Integer</td>
+<td>Current id</td>
+<td></td>
+</tr>
+<tr>
+<td>cxl_rej_reason</td>
+<td>String</td>
+<td>Canceled</td>
+<td>Rejected, note the specific reason</td>
+</tr>
+<tr>
+<td>display_qty</td>
+<td>decimal</td>
+<td>Order display quantity</td>
+<td></td>
+</tr>
+<tr>
+<td>exec_fee</td>
+<td>decimal</td>
+<td>Settlement expenses</td>
+<td></td>
+</tr>
+<tr>
+<td>exec_id</td>
+<td>String</td>
+<td>Exec id</td>
+<td></td>
+</tr>
+<tr>
+<td>exec_inst</td>
+<td>String</td>
+<td>Additional instructions</td>
+<td></td>
+</tr>
+<tr>
+<td>exec_price</td>
+<td>decimal</td>
+<td>Transaction price</td>
+<td></td>
+</tr>
+<tr>
+<td>exec_qty</td>
+<td>decimal</td>
+<td>Number of transactions</td>
+<td></td>
+</tr>
+<tr>
+<td>exec_status</td>
+<td>String</td>
+<td>Transaction status</td>
+<td></td>
+</tr>
+<tr>
+<td>exec_value</td>
+<td>decimal</td>
+<td>Transaction value</td>
+<td></td>
+</tr>
+<tr>
+<td>fee_rate</td>
+<td>decimal</td>
+<td>settlement rate</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>Id</td>
+<td></td>
+</tr>
+<tr>
+<td>last_liquidity_ind</td>
+<td>String</td>
+<td>Last liquidity</td>
+<td></td>
+</tr>
+<tr>
+<td>leaves_qty</td>
+<td>decimal</td>
+<td>Remaining quantity</td>
+<td></td>
+</tr>
+<tr>
+<td>leaves_value</td>
+<td>decimal</td>
+<td>Surplus value</td>
+<td></td>
+</tr>
+<tr>
+<td>leverage</td>
+<td>String</td>
+<td>Position lever</td>
+<td></td>
+</tr>
+<tr>
+<td>ord_status</td>
+<td>String</td>
+<td>Order status</td>
+<td></td>
+</tr>
+<tr>
+<td>ord_type</td>
+<td>String</td>
+<td>Order type</td>
+<td></td>
+</tr>
+<tr>
+<td>order_qty</td>
+<td>decimal</td>
+<td>Order qty</td>
+<td></td>
+</tr>
+<tr>
+<td>orderid</td>
+<td>String</td>
+<td>Order id</td>
+<td></td>
+</tr>
+<tr>
+<td>orig_ord_type</td>
+<td>String</td>
+<td>Original order type</td>
+<td></td>
+</tr>
+<tr>
+<td>peg_offset_value</td>
+<td>decimal</td>
+<td>Track the price distance of stop loss</td>
+<td></td>
+</tr>
+<tr>
+<td>peg_price_type</td>
+<td>String</td>
+<td>Peg price type</td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>decimal</td>
+<td>Price</td>
+<td></td>
+</tr>
+<tr>
+<td>side</td>
+<td>Integer</td>
+<td>Side</td>
+<td></td>
+</tr>
+<tr>
+<td>sl_trigger</td>
+<td>decimal</td>
+<td>Sl trigger</td>
+<td></td>
+</tr>
+<tr>
+<td>stop_direction</td>
+<td>String</td>
+<td>Calculated trigger price direction</td>
+<td></td>
+</tr>
+<tr>
+<td>stop_loss_price</td>
+<td>decimal</td>
+<td>Stop loss price</td>
+<td></td>
+</tr>
+<tr>
+<td>stop_price</td>
+<td>decimal</td>
+<td>Stop price</td>
+<td></td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Symbol</td>
+<td></td>
+</tr>
+<tr>
+<td>symbol_id</td>
+<td>Integer</td>
+<td>Symbol id</td>
+<td></td>
+</tr>
+<tr>
+<td>take_profit_price</td>
+<td>decimal</td>
+<td>Opening order with closing profit price</td>
+<td></td>
+</tr>
+<tr>
+<td>timeinforce</td>
+<td>String</td>
+<td>Time in force</td>
+<td></td>
+</tr>
+<tr>
+<td>tp_trigger</td>
+<td>decimal</td>
+<td>Tp trigger</td>
+<td></td>
+</tr>
+<tr>
+<td>tradetype</td>
+<td>String</td>
+<td>Trade type</td>
+<td></td>
+</tr>
+<tr>
+<td>trigger_type</td>
+<td>String</td>
+<td>Trigger type</td>
+<td></td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>String</td>
+<td>Update time</td>
+<td></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>Integer</td>
+<td>User id</td>
+<td></td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight plaintext"><code>
+## Query user trade by symbol
+
+&gt; Request format
+
 </code></pre></div>
+<p>POST /api
+```</p>
+
 <blockquote>
 <p>Request sample</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"server_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AdminSvr"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queryExecOrder"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-20"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-21"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"page_num"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
-   </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"server_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AdminSvr"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"queryExecOrder"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-20"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-09-21"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"page_num"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"page_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sort_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update_time"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sort_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -3320,8 +3829,29 @@ HMacSha256({
 </tr>
 <tr>
 <td>page_num</td>
-<td>String</td>
+<td>Integer</td>
 <td>Yes</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>page_size</td>
+<td>Integer</td>
+<td>Yes</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sort_field</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sort_type</td>
+<td>String</td>
+<td>No</td>
 <td></td>
 <td></td>
 </tr>
@@ -3338,34 +3868,62 @@ HMacSha256({
 <p>Response sample</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"close_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-1"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"closed_pnl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"closed_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-20 17:50:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"exec_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"exec_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e123123123"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"exec_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.6"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"exec_qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"exec_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"fee_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.02"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s234234"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="w">
-            </span><span class="nl">"update_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-20 17:50:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
-         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="nl">"ret_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_ERROR"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"ret_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_ERROR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1119</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">705232705</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"close_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500020"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closed_pnl"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closed_size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-16 01:24:17"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.24</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9c1626ff-5b18-3a39-b23d-25d7cdc0bb64"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1200.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">1200.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fee_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0002</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9b0aff86-06c0-370b-9ea8-e44058a2edc9"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETHUSDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"update_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-16 01:24:17"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">500020</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='query-kline'>Query kline</h2>
+</span></code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>| Field                    | Type    | Description                                                         | Possible values                      |
+|--------------------      |---------|---------------------------------------------------------------------|--------------------------------------|
+| orders                   | List    | Orders information                                                  |                                      |
+| account_id               | Integer | Account id                                                          |                                      |
+| close_by                 | String  | Last operator                                                       |                                      |
+| closed_pnl               | decimal | Closing profit and loss                                             |                                      |
+| closed_size              | decimal | Closing size                                                        |                                      |
+| create_time              | String  | Create time                                                         |                                      |
+| currency                 | String  | trading account's settle currency. Use to identify trading account. | 1:USDT                               |
+| currency_id              | Integer | Current id                                                          |                                      |
+| exec_fee                 | decimal | Settlement expenses                                                 |                                      |
+| exec_id                  | String  | Exec id                                                             |                                      |
+| exec_price               | decimal | Transaction price                                                   |                                      |
+| exec_qty                 | decimal | Number of transactions                                              |                                      |
+| exec_type                | String  | Exec type                                                           |                                      |
+| exec_value               | decimal | Exec value                                                          |                                      |
+| fee_rate                 | decimal | Settle fee                                                          |                                      |
+| orderid                  | String  | Order id                                                            |                                      |
+| side                     | Integer | Side                                                                |                                      |
+| symbol                   | String  | Symbol                                                              |                                      |
+| symbol_id                | Integer | Symbol id                                                           |                                      |
+| update_time              | String  | Update time                                                         |                                      |
+| user_id                  | Integer | User id                                                             |                                      |
+
+</code></pre></div><h2 id='query-kline'>Query kline</h2>
 <blockquote>
 <p>Request format</p>
 </blockquote>
@@ -3375,7 +3933,7 @@ HMacSha256({
 <p>Request sample</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"serverName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDHistSvr"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"serverName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AdminSvr"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
@@ -3402,7 +3960,7 @@ HMacSha256({
 <td>String</td>
 <td>Yes</td>
 <td></td>
-<td>MDHistSvr</td>
+<td>AdminSvr</td>
 </tr>
 <tr>
 <td>method</td>
@@ -3502,7 +4060,23 @@ HMacSha256({
    </span><span class="p">},</span><span class="w">
    </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h1 id='contract-websocket-api'>Contract Websocket API</h1><h2 id='heartbeat'>Heartbeat</h2>
+</span></code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>| Field                    | Type    | Description                                                         | Possible values                      |
+|--------------------      |---------|---------------------------------------------------------------------|--------------------------------------|
+| kline_data               | List    | Orders information                                                  |                                      |
+| close                    | String  | Close price                                                         |                                      |
+| create_time              | String  | Create time                                                         |                                      |
+| high                     | String  | High price                                                          |                                |
+| interval                 | String  | KLine type                                                          |                                      |
+| last_close               | String  | Last close price                                                    |                                      |
+| low                      | String  | Low price                                                           |                                      |
+| open                     | String  | Open price                                                          |                                      |
+| symbol                   | String  | Symbol                                                              |                                      |
+| timestamp                | String  | Timestamp                                                           |                                      |
+| turnover                 | String  | Turnover                                                            |                                      |
+| update_time              | String  | Update time                                                         |                                      |
+| volume                   | String  | Volume                                                              |                                      |
+
+</code></pre></div><h1 id='contract-websocket-api'>Contract Websocket API</h1><h2 id='heartbeat'>Heartbeat</h2>
 <blockquote>
 <p>Request</p>
 </blockquote>
