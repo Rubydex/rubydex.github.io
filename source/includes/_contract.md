@@ -2059,4 +2059,3 @@ On each successful subscription, DataGW will publish 24-hour ticker updates for 
 | symbol        | String | Contract symbol name                       |              |
 | turnover      | String | Turnover value in last 24 hours |              |
 | volume        | String | Trade volume in last 24 hours       |              |
-
