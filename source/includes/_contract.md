@@ -674,7 +674,7 @@ POST /api
 | symbol_id                | Integer | Symbol id                                                           |                                      |
 | update_time              | String  | Update time                                                         |                                      |
 | user_id                  | Integer | User id                                                             |                                      |
-| value                    | decimal | Positon total value                                                 |                                      |                   
+| value                    | decimal | Positon total value                                                 |                                      |
 
 ## Set leverage
 
@@ -872,61 +872,6 @@ POST /api
 	"cid": "test-123"
 }
 ```
-
-| Field                    | Type    | Description                                                         | Possible values                      |
-|--------------------      |---------|---------------------------------------------------------------------|--------------------------------------|
-| orders                   | List    | Orders information                                                  |                                      |
-| account_id               | Integer | Account id                                                          |                                      |
-| action                   | Integer | Operat type                                                         |                                      |
-| action_by                | Integer | Classification identification of operation                          |                                      |
-| biz_error                | Integer | Error code                                                          |                                      |
-| clord_id                 | String  | External incoming order number                                      |                                      |
-| close_by                 | String  | Last operator                                                       |                                      |
-| closed_pnl               | decimal | Closing profit and loss                                             |                                      |
-| closed_size              | decimal | Closing size                                                        |                                      |
-| create_time              | String  | Create time                                                         |                                      |
-| cum_qty                  | decimal | Cumulative number of transactions                                   |                                      |
-| cum_value                | decimal | Accumulated transaction value                                       |                                      |
-| currency                 | String  | trading account's settle currency. Use to identify trading account. | 1:USDT                               |
-| currency_id              | Integer | Current id                                                          |                                      |
-| cxl_rej_reason           | String  | Canceled | Rejected, note the specific reason                       |                                      |
-| display_qty              | decimal | Order display quantity                                              |                                      |
-| exec_fee                 | decimal | Settlement expenses                                                 |                                      |
-| exec_id                  | String  | Exec id                                                             |                                      |
-| exec_inst                | String  | Additional instructions                                             |                                      |
-| exec_price               | decimal | Transaction price                                                   |                                      |
-| exec_qty                 | decimal | Number of transactions                                              |                                      |
-| exec_status              | String  | Transaction status                                                  |                                      |
-| exec_value               | decimal | Transaction value                                                   |                                      |
-| fee_rate                 | decimal | settlement rate                                                     |                                      |
-| id                       | Integer | Id                                                                  |                                      |
-| last_liquidity_ind       | String  | Last liquidity                                                      |                                      |
-| leaves_qty               | decimal | Remaining quantity                                                  |                                      |
-| leaves_value             | decimal | Surplus value                                                       |                                      |
-| leverage                 | String  | Position lever                                                      |                                      |
-| ord_status               | String  | Order status                                                        |                                      |
-| ord_type                 | String  | Order type                                                          |                                      |
-| order_qty                | decimal | Order qty                                                           |                                      |
-| orderid                  | String  | Order id                                                            |                                      |
-| orig_ord_type            | String  | Original order type                                                 |                                      |
-| peg_offset_value         | decimal | Track the price distance of stop loss                               |                                      |
-| peg_price_type           | String  | Peg price type                                                      |                                      |
-| price                    | decimal | Price                                                               |                                      |
-| side                     | Integer | Side                                                                |                                      |
-| sl_trigger               | decimal | Sl trigger                                                          |                                      |
-| stop_direction           | String  | Calculated trigger price direction                                  |                                      |
-| stop_loss_price          | decimal | Stop loss price                                                     |                                      |
-| stop_price               | decimal | Stop price                                                          |                                      |
-| symbol                   | String  | Symbol                                                              |                                      |
-| symbol_id                | Integer | Symbol id                                                           |                                      |
-| take_profit_price        | decimal | Opening order with closing profit price                             |                                      |
-| timeinforce              | String  | Time in force                                                       |                                      |
-| tp_trigger               | decimal | Tp trigger                                                          |                                      |
-| tradetype                | String  | Trade type                                                          |                                      |
-| trigger_type             | String  | Trigger type                                                        |                                      |
-| update_time              | String  | Update time                                                         |                                      |
-| user_id                  | Integer | User id                                                             |                                      |
-
 
 ## Query user trade by symbol
 
