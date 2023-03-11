@@ -1013,7 +1013,6 @@ POST /api
 | count       | Integer | No       | Kline total Amount you want to search |                 |
 | cid         | String  | No       |                                       |                 |
 
-```
 > Response sample
 
 ```json
