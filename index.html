@@ -3544,43 +3544,43 @@ HMacSha256({
 <td></td>
 </tr>
 </tbody></table>
-<div class="highlight"><pre class="highlight plaintext"><code>
-&gt; Response sample
 
-```json
-{
-    "msg": "NO_ERROR",
-    "code": 0,
-    "data": {
-        "total": 1119,
-        "orders": [
-            {
-                "account_id": 705232705,
-                "close_by": "500020",
-                "closed_pnl": 0.0,
-                "closed_size": 0.0,
-                "create_time": "2023-01-16 01:24:17",
-                "currency": "USDT",
-                "currency_id": 1,
-                "exec_fee": 0.24,
-                "exec_id": "9c1626ff-5b18-3a39-b23d-25d7cdc0bb64",
-                "exec_price": 1200.0,
-                "exec_qty": 1.0,
-                "exec_type": "6",
-                "exec_value": 1200.0,
-                "fee_rate": 0.0002,
-                "order_id": "9b0aff86-06c0-370b-9ea8-e44058a2edc9",
-                "side": "1",
-                "symbol": "ETHUSDT",
-                "symbol_id": 11,
-                "update_time": "2023-01-16 01:24:17",
-                "user_id": 500020
-            }
-        ]
-    },
-    "cid": "test-123"
-}
-</code></pre></div>
+<blockquote>
+<p>Response sample</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_ERROR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1119</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">705232705</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"close_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500020"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closed_pnl"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closed_size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-16 01:24:17"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.24</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9c1626ff-5b18-3a39-b23d-25d7cdc0bb64"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1200.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exec_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">1200.0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fee_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0002</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9b0aff86-06c0-370b-9ea8-e44058a2edc9"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETHUSDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"update_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-16 01:24:17"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">500020</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-123"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Field</th>
