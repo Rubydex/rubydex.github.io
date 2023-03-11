@@ -769,6 +769,7 @@ POST /api
 ```
 POST /api
 ```
+
 > Request sample
 
 ```json
@@ -870,8 +871,8 @@ POST /api
 	},
 	"cid": "test-123"
 }
-
 ```
+
 | Field                    | Type    | Description                                                         | Possible values                      |
 |--------------------      |---------|---------------------------------------------------------------------|--------------------------------------|
 | orders                   | List    | Orders information                                                  |                                      |
@@ -934,6 +935,7 @@ POST /api
 ```
 POST /api
 ```
+
 > Request sample
 
 ```json
