@@ -914,8 +914,6 @@ POST /api
 | sort_type   | String | No       |             |                |
 | cid         | String | Yes      |             |                |
 
-```
-
 > Response sample
 
 ```json
